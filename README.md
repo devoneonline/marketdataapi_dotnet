@@ -7,8 +7,8 @@ The easiest way to start using Simple.OData.Client is to install it’s Nuget pa
 
 Install-Package Simple.OData.Client
 
-Visit https://github.com/object/Simple.OData.Client if you need help with the library. You are at liberty to use any other client library.
+Visit https://github.com/object/Simple.OData.Client if you need help with the Simple.OData.Client library. You are at liberty to use any other client library.
 
-Have you got any comment or feedback, you can send right here on github.
+Have you got any comment or feedback, you can send them right here on github.
 
 Happy Coding!
