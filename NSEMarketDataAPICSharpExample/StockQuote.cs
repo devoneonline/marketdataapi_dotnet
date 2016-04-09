@@ -11,7 +11,7 @@ namespace NSEMarketDataAPICSharpExample
     class StockQuote
     {
         public string Symbol { set; get; }
-        public double Price { set; get; }
+        public double Last { set; get; }
         public DateTime LastTradeTime { set; get; }
 
         //define members you are interested in here
@@ -38,7 +38,7 @@ namespace NSEMarketDataAPICSharpExample
 
             //You can store retrieved data for later use by your client.
 
-            Console.WriteLine(DateTime.Now.ToString() + ": " + stockQuote["Symbol"] + ": " + stockQuote["Price"] + " as @ " + stockQuote["LastTradeTime"]);
+            Console.WriteLine(DateTime.Now.ToString() + ": " + stockQuote["Symbol"] + ": " + stockQuote["Last"] + " as @ " + stockQuote["LastTradeTime"]);
         }
 
         public async void FetchTypedWith(string nseBaseURI, string myUserName, string myToken)
@@ -60,7 +60,7 @@ namespace NSEMarketDataAPICSharpExample
 
             //You can store retrieved data for later use by your client.
 
-            Console.WriteLine(DateTime.Now.ToString() + ": "+ stockQuote.Symbol + ": " + stockQuote.Price.ToString("N02") + " as @ " + stockQuote.LastTradeTime.ToString());
+            Console.WriteLine(DateTime.Now.ToString() + ": "+ stockQuote.Symbol + ": " + stockQuote.Last.ToString("N02") + " as @ " + stockQuote.LastTradeTime.ToString());
         }
     }
 }
