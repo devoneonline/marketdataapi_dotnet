@@ -17,11 +17,15 @@ namespace NSEMarketDataAPICSharpExample
         {
             while (true)
             {
-                var stockQuoteClient = Task.Run(() => new StockQuoteClient().FetchTypedWith(NSE_BASEURI, USER_NAME, USER_TOKEN));
+                var realTimeQuoteClient = Task.Run(() => new RealTimeQuoteClient().FetchTypedWith(NSE_BASEURI, USER_NAME, USER_TOKEN));
+                Console.WriteLine(DateTime.Now.ToString() + ": Real Time Quote data request sent to NSE");
+
+                var delayedQuoteClient = Task.Run(() => new DelayedQuoteClient().FetchTypedWith(NSE_BASEURI, USER_NAME, USER_TOKEN));
+                Console.WriteLine(DateTime.Now.ToString() + ": Delayed Quote data request sent to NSE");
+
+                realTimeQuoteClient.Wait();
+                delayedQuoteClient.Wait();
                 
-                // Output a message from the calling thread.
-                Console.WriteLine(DateTime.Now.ToString() + ": StockQuote data request sent to NSE");
-                stockQuoteClient.Wait();
 
                 Thread.Sleep(60000);
             }
